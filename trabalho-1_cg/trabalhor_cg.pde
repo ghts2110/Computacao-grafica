@@ -43,6 +43,8 @@ void draw() {
   }
   time++;
   
+  Chamine();
+
   
   if(time % 113 == 0 && val2){
     nivel--;
