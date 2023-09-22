@@ -4,7 +4,6 @@ float x_nuvem = 700, y_nuvem, nuvem = 5;
 int dia = 0;
 int m1 = -50, m2 = -50, m3 = -50, m4 = -50, m5 = -50, m6 = -50, m7 = -50, m8 = -50;
 int tm = 15;
-int smokeX1= 335, smokeX2 = 365;// x1 e x2 da chamine
 
 // ceu
 int r=144, g=192, b=255;
@@ -43,9 +42,6 @@ void draw() {
   }
   time++;
   
-  Chamine();
-
-  
   if(time % 113 == 0 && val2){
     nivel--;
     if(nivel == 540){
@@ -61,6 +57,7 @@ void draw() {
 
   //casa
   Parede_da_casa();
+  Chamine();
   telhado();
   porta();
   
