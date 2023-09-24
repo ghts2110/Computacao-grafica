@@ -1,5 +1,3 @@
-int x_sol = 0, y_sol = 50;
-int x_lua = 900, y_lua = 50, lua = 0;
 float x_nuvem = 700, y_nuvem, nuvem = 5;
 int dia = 0;
 int m1 = -50, m2 = -50, m3 = -50, m4 = -50, m5 = -50, m6 = -50, m7 = -50, m8 = -50;
@@ -16,6 +14,7 @@ boolean val1 = true, val2 = true;
 //casa
 int time_janela = 0;
 boolean open = true;
+int time_chamine = 0, cont_chamine = 0;
 
 void setup(){
   size(600, 600);
@@ -55,9 +54,33 @@ void draw() {
   }
   mar(nivel, t);  
 
+  //ceu
+  if(dist_sol <= 660){
+     dist_sol+=1.2;
+     sol(dist_sol);
+     
+     if(dist_sol > 600){
+       dist_lua = -60;
+     }
+  }
+  
+  if(dist_lua <= 660){
+    dist_lua+=1.2;
+    lua(dist_lua);
+    if(dist_lua > 600){
+      dist_sol = -60;
+    }
+  }
+  
+  luz();
+  
   //casa
   Parede_da_casa();
-  Chamine();
+  time_chamine++;
+  if(time_chamine % 7 == 0){
+    cont_chamine++;
+  }
+  Chamine(cont_chamine);
   telhado();
   porta();
   
@@ -71,21 +94,4 @@ void draw() {
   
   janela(open);
   macaneta();
-  
-  //ceu
-  if(dist_sol <= 660){
-     dist_sol+=1.2;
-     sol(dist_sol);
-     if(dist_sol > 600){
-       dist_lua = -60;
-     }
-  }
-  
-  if(dist_lua <= 660){
-    dist_lua+=1.2;
-    lua(dist_lua);
-    if(dist_lua > 600){
-      dist_sol = -60;
-    }
-  }
 }

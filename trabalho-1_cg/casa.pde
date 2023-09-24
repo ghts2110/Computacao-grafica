@@ -59,30 +59,32 @@ void janela(boolean open){
   }
 }
 
-void Chamine(){
+void Chamine(int cont_chamine){
   stroke(130, 60, 10);
   for(int i= 300;i != 350; i++){
     line(330, i, 365, i);
   }
-  stroke(0);
 
   stroke(110, 60, 10);
   for(int i= 290;i != 300; i++){
     line(320, i, 375, i);
   }
-  stroke(0);
   
-  for (int y = 290; y > 0 ; y = y -10) {
-    
-    stroke(10, 40, 10);
-    line(smokeX1, y, smokeX2, y);
-    
-    smokeX1++;
-    smokeX2--;
-    if(smokeX1 == smokeX2){
-      smokeX1 = 335;
-      smokeX2 = 365;
-    }
-    stroke(0);
+  float amplitude = 10; // Amplitude da onda
+  float frequencia = 100; // Frequência da onda
+  float espacamento = 1; // Espaçamento entre os segmentos de linha
+  
+  stroke(0);
+  for (float y = 200; y < 290; y += espacamento) {
+    float x1 = 355 + amplitude * sin(frequencia * y + cont_chamine);
+    float x2 = 355 + amplitude * sin(frequencia * (y + espacamento) + cont_chamine);
+    line(x1, y, x2, y + espacamento);
   }
+  
+  for (float y = 200; y < 290; y += espacamento) {
+    float x1 = 340 + amplitude * sin(frequencia * y + cont_chamine);
+    float x2 = 340 + amplitude * sin(frequencia * (y + espacamento) + cont_chamine);
+    line(x1, y, x2, y + espacamento);
+  }
+  
 }

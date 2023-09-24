@@ -15,6 +15,7 @@ void mar(int nivel, int t){
   stroke(0, 0, 128);
   int dimi = 100;
   
+
   for(int i= 500;i != 600; i++){
     int x1 = nivel, x2 = 600;
     if(dimi != 0){
