@@ -1,10 +1,10 @@
 float x_nuvem = 700, y_nuvem, nuvem = 5;
-int dia = 0;
-int m1 = -50, m2 = -50, m3 = -50, m4 = -50, m5 = -50, m6 = -50, m7 = -50, m8 = -50;
-int tm = 15;
+
+//pessoa 
+int x = 250, y = 490, d = 0;
 
 // ceu
-int r=144, g=192, b=255;
+int r=75, g=135, b=175, time_luz = 0;
 float dist_sol = -60, dist_lua = 670;
 
 //mar
@@ -55,8 +55,20 @@ void draw() {
   mar(nivel, t);  
 
   //ceu
+  time_luz++;
   if(dist_sol <= 660){
      dist_sol+=1.2;
+     
+     if(time_luz  % 3 == 0 && dist_sol <= 300){
+       r++;
+       g++;
+       b++; 
+     }else if(time_luz  % 3 == 0){
+       r--;
+       g--;
+       b--;
+     }
+     
      sol(dist_sol);
      
      if(dist_sol > 600){
@@ -66,6 +78,17 @@ void draw() {
   
   if(dist_lua <= 660){
     dist_lua+=1.2;
+    
+    if(time_luz  % 4 == 0 && dist_lua <= 300){
+       r--;
+       g--;
+       b--; 
+     }else if(time_luz  % 4 == 0){
+       r++;
+       g++;
+       b++;
+     }
+     
     lua(dist_lua);
     if(dist_lua > 600){
       dist_sol = -60;
@@ -94,4 +117,19 @@ void draw() {
   
   janela(open);
   macaneta();
+  
+  //pessoa
+  if(dist_sol < 600 && dist_sol > 0){
+    if(dist_sol < 300){
+      d = 0;
+      x--;
+    }else{
+      d = 1;
+      x++;
+    }
+  
+    corpo(x, y, d);
+    cabeca(x, y);
+    chapeu(x, y, d);
+  }
 }
