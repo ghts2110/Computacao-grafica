@@ -4,7 +4,7 @@ float x_nuvem = 700, y_nuvem, nuvem = 5;
 int x = 250, y = 490, d = 0;
 
 // ceu
-int r=75, g=135, b=175, time_luz = 0;
+int r=75, g=135, b=175, time_luz = 0, fase_lua = -1;
 float dist_sol = -60, dist_lua = 670;
 
 //mar
@@ -53,6 +53,7 @@ void draw() {
     }
   }
   mar(nivel, t);  
+  arvore();
 
   //ceu
   time_luz++;
@@ -71,7 +72,9 @@ void draw() {
      
      sol(dist_sol);
      
-     if(dist_sol > 600){
+     if(dist_sol > 659){
+       fase_lua++;
+       fase_lua %= 5;
        dist_lua = -60;
      }
   }
@@ -89,8 +92,8 @@ void draw() {
        b++;
      }
      
-    lua(dist_lua);
-    if(dist_lua > 600){
+    lua(dist_lua, fase_lua, r, g, b);
+    if(dist_lua > 659){
       dist_sol = -60;
     }
   }
@@ -120,10 +123,10 @@ void draw() {
   
   //pessoa
   if(dist_sol < 600 && dist_sol > 0){
-    if(dist_sol < 300){
+    if(dist_sol < 300 && x > 85){
       d = 0;
       x--;
-    }else{
+    }else if(dist_sol > 392){
       d = 1;
       x++;
     }
