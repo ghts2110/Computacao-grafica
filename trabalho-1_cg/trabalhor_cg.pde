@@ -1,3 +1,12 @@
+int[] dp = new int[1001]; 
+void fib(){
+  dp[1] = 1;
+  for(int i = 2; i != 1000; i++){
+    dp[i] = dp[i-1] + dp[i-2];
+  } 
+}
+
+
 float x_nuvem = 700, y_nuvem, nuvem = 5;
 
 //pessoa 
@@ -6,6 +15,8 @@ int x = 250, y = 490, d = 0;
 // ceu
 int r=75, g=135, b=175, time_luz = 0, fase_lua = -1;
 float dist_sol = -60, dist_lua = 670;
+int time_passaro = 1;
+
 
 //mar
 int time = 0, t = 0, nivel = 600;
@@ -18,6 +29,7 @@ int time_chamine = 0, cont_chamine = 0;
 
 void setup(){
   size(600, 600);
+  fib();
 }
 
 void draw() {
@@ -98,6 +110,7 @@ void draw() {
       dist_sol = -60;
     }
   }
+  passaro(dp);
   
   //casa
   Parede_da_casa();

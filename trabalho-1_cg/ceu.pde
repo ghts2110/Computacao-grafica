@@ -91,6 +91,22 @@ void lua(float dist, int fase_lua, int r, int g, int b){
   
 }
 
-void estrelas(){
+void passaro(int dp[]){
+  float centerX = width / 2;
+  float centerY = height / 2;
+  float radius = 250;    // Raio do círculo
+  float angle = 0;       // Ângulo inicial
+  float speed = 0.02;    // Velocidade de rotação
   
+    time_passaro++;
+    
+    radius-=(dp[time_passaro]/dp[time_passaro-1])-1;
+    float x = centerX + cos(angle) * radius;
+    float y = centerY + sin(angle) * radius;
+    
+    point(x, y);     // Desenha o ponto
+    
+    angle += speed;  // Incrementa o ângulo para fazer o ponto se mover em círculos
 }
+  
+  
