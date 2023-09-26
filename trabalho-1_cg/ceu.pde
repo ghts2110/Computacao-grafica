@@ -91,18 +91,58 @@ void lua(float dist, int fase_lua, int r, int g, int b){
   
 }
 
-void passaro(int dp[]){
-    time_passaro++;
+void passaro(double dp[]){
     
-    radius+= (dp[time_passaro]/dp[time_passaro-1])-1; //<>//
-    println(radius);
+    if(radius < 0){
+      validate_volta = false;
+      time_passaro = 2;
+    }else if(radius > 250){
+      validate_volta = true;
+      time_passaro = 2;
+    }
+    
+    if(validate_volta){
+        time_passaro++;
+        radius -= (dp[time_passaro]/dp[time_passaro-1])-1;
+    }else{
+      time_passaro++;
+      radius += (dp[time_passaro]/dp[time_passaro-1])-1;
+    }
+    
     float x = centerX + cos(angle) * radius;
     float y = centerY + sin(angle) * radius;
     
-    strokeWeight(30);
-    point(x, y);     // Desenha o ponto
-    strokeWeight(0);
-
+    stroke(0);
+    line(x, y, x+5, y - 10);   
+    line(x, y, x-5, y - 10);
+    line(x - 15, y - 10, x-5, y - 10);
+    line(x+15, y-10, x+5, y - 10); 
+    
+    line(x+50, y, x+5+50, y - 10);   
+    line(x+50, y, x-5+50, y - 10);
+    line(x+50 - 15, y - 10, x-5+50, y - 10);
+    line(x+15+50, y-10, x+5+50, y - 10);
+    
+    line(x+25, y+50, x+5+25, y-10+50);   
+    line(x+25, y+50, x-5+25, y-10+50);
+    line(x+25-15, y-10+50, x-5+25, y-10+50);
+    line(x+15+25, y-10+50, x+5+25, y-10+50); 
+    
+    line(x+25, y-50, x+5+25, y-10-50);   
+    line(x+25, y-50, x-5+25, y-10-50);
+    line(x+25-15, y-10-50, x-5+25, y-10-50);
+    line(x+15+25, y-10-50, x+5+25, y-10-50); 
+    
+    line(x+60, y-55, x+5+60, y-10-55);   
+    line(x+60, y-55, x-5+60, y-10-55);
+    line(x+60-15, y-10-55, x-5+60, y-10-55);
+    line(x+15+60, y-10-55, x+5+60, y-10-55);
+    
+    line(x+10, y-80, x+5+10, y-10-80);   
+    line(x+10, y-80, x-5+10, y-10-80);
+    line(x+10-15, y-10-80, x-5+10, y-10-80);
+    line(x+15+10, y-10-80, x+5+10, y-10-80);
+    
     angle += speed;  // Incrementa o ângulo para fazer o ponto se mover em círculos
 }
   

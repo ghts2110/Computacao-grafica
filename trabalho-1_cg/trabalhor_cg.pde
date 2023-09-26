@@ -1,5 +1,6 @@
-int[] dp = new int[1001]; 
+double[] dp = new double[1001]; 
 void fib(){
+  dp[0] = 0;
   dp[1] = 1;
   for(int i = 2; i != 1000; i++){
     dp[i] = dp[i-1] + dp[i-2];
@@ -20,6 +21,7 @@ float centerX, centerY; // Centro do círculo
 float radius = 250;    // Raio do círculo
 float angle = 0;       // Ângulo inicial
 float speed = 0.02;    // Velocidade de rotação
+boolean validate_volta = true;
 
 
 
@@ -37,6 +39,7 @@ void setup(){
   centerX = width / 2;
   centerY = height / 2;
   fib();
+  noLoop();
 }
 
 void draw() {
@@ -117,7 +120,6 @@ void draw() {
       dist_sol = -60;
     }
   }
-  passaro(dp);
   
   //casa
   Parede_da_casa();
@@ -154,4 +156,7 @@ void draw() {
     cabeca(x, y);
     chapeu(x, y, d);
   }
+  
+    passaro(dp);
+
 }
