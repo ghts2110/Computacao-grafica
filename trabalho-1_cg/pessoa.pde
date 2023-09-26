@@ -6,7 +6,11 @@ void corpo(int x, int y, int d){
 
   if(d == 0){
     line(x, y-15, x+15, y+5);
-    line(x, y-15, x-15, y-35);
+    if(x == 85){
+      line(x, y-15, x-15, y-15);
+    }else{
+      line(x, y-15, x-15, y-35);
+    }
   }else{
     line(x, y-15, x+15, y-35);
     line(x, y-15, x-15, y+5);

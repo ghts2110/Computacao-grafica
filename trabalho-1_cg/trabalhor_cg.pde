@@ -74,7 +74,7 @@ void draw() {
      
      if(dist_sol > 659){
        fase_lua++;
-       fase_lua %= 5;
+       fase_lua %= 6;
        dist_lua = -60;
      }
   }
@@ -82,7 +82,7 @@ void draw() {
   if(dist_lua <= 660){
     dist_lua+=1.2;
     
-    if(time_luz  % 4 == 0 && dist_lua <= 300){
+    if(time_luz % 4 == 0 && dist_lua <= 300){
        r--;
        g--;
        b--; 
@@ -93,12 +93,11 @@ void draw() {
      }
      
     lua(dist_lua, fase_lua, r, g, b);
+    
     if(dist_lua > 659){
       dist_sol = -60;
     }
   }
-  
-  luz();
   
   //casa
   Parede_da_casa();
