@@ -15,7 +15,12 @@ int x = 250, y = 490, d = 0;
 // ceu
 int r=75, g=135, b=175, time_luz = 0, fase_lua = -1;
 float dist_sol = -60, dist_lua = 670;
-int time_passaro = 1;
+int time_passaro = 2;
+float centerX, centerY; // Centro do círculo
+float radius = 250;    // Raio do círculo
+float angle = 0;       // Ângulo inicial
+float speed = 0.02;    // Velocidade de rotação
+
 
 
 //mar
@@ -29,6 +34,8 @@ int time_chamine = 0, cont_chamine = 0;
 
 void setup(){
   size(600, 600);
+  centerX = width / 2;
+  centerY = height / 2;
   fib();
 }
 
