@@ -12,7 +12,7 @@ int x = 250, y = 490, d = 0;
 
 // ceu
 int r=75, g=135, b=175, time_luz = 0, fase_lua = -1;
-float dist_lua = 670;
+float dist_sol = -60, dist_lua = 670;
 int time_passaro = 2;
 float centerX, centerY; // Centro do círculo
 float radius = 250;    // Raio do círculo
@@ -36,13 +36,13 @@ void setup(){
   fib();
   noLoop();
   noSmooth();
-  Thread t = new Thread(new SunThread()); // Cria uma nova thread usando a classe SunThread
-  t.start(); // Inicia a thread
-  try{
-    t.sleep(1000);
-  }catch(Exception e){
-    
-  }
+  
+  Thread tm = new Thread(new Mar());
+  Thread ts = new Thread(new Sol());
+  Thread tl = new Thread(new Lua());
+  ts.start(); 
+  tm.start(); 
+  tl.start();
 }
 
 void draw() {
@@ -51,57 +51,17 @@ void draw() {
   //chao
   grama();
   areia();
-  if(time % 3 == 0 && val1){
-    t++;
-    if(t == 20){
-      val1 = false;
-    }
-  }if(time % 3 == 0 && !val1){
-    t--;
-    if(t == 0){
-      val1 = true;
-      time = -1;
-    }
-  }
-  time++;
-  
-  if(time % 113 == 0 && val2){
-    nivel--;
-    if(nivel == 540){
-      val2 = false;
-    }
-  }else if(time % 113 == 0 && !val2){
-    nivel++;
-    if(nivel == 600){
-      val2 = true;
-    }
-  }
   mar(nivel, t);  
   arvore();
 
   //ceu
-  time_luz++;
-  
-  
-  if(dist_lua <= 660){
-    dist_lua+=1.2;
-    
-    if(time_luz % 4 == 0 && dist_lua <= 300){
-       r--;
-       g--;
-       b--; 
-     }else if(time_luz  % 4 == 0){
-       r++;
-       g++;
-       b++;
-     }
-     
-    lua(dist_lua, fase_lua, r, g, b);
-    
-    if(dist_lua > 659){
-      dist_sol = -60;
-    }
+  if(dist_sol <= 660){
+    sol(dist_sol);
   }
+  if(dist_lua <= 660){
+    lua(dist_lua, fase_lua, r, g, b);
+  }
+  
   
   //casa
   Parede_da_casa();
@@ -140,12 +100,4 @@ void draw() {
   }
   
     passaro(dp);
-}
-
-class SunThread implements Runnable {
-  public void run() {
-    while (true) {
-      redraw();
-    }
-  }
 }
