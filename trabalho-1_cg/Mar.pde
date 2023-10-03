@@ -29,7 +29,7 @@ class Mar implements Runnable {
       redraw();
       
       try {
-        Thread.sleep(15); // Espera por 50 milissegundos antes de mover o sol novamente
+        Thread.sleep(15); 
       } catch (InterruptedException e) {
         e.printStackTrace();
       }

@@ -29,6 +29,14 @@ int time_janela = 0;
 boolean open = true;
 int time_chamine = 0, cont_chamine = 0;
 
+// thread
+Thread tm = new Thread(new Mar());
+Thread ts = new Thread(new Sol());
+Thread tl = new Thread(new Lua());
+Thread tfc = new Thread(new Fumaca_chamine());
+Thread tj = new Thread(new Janela());
+Thread tmp = new Thread(new Movimento_pessoa());
+
 void setup(){
   size(600, 600);
   centerX = width / 2;
@@ -37,12 +45,12 @@ void setup(){
   noLoop();
   noSmooth();
   
-  Thread tm = new Thread(new Mar());
-  Thread ts = new Thread(new Sol());
-  Thread tl = new Thread(new Lua());
   ts.start(); 
   tm.start(); 
   tl.start();
+  tfc.start();
+  tj.start();
+  tmp.start();
 }
 
 void draw() {
@@ -62,38 +70,16 @@ void draw() {
     lua(dist_lua, fase_lua, r, g, b);
   }
   
-  
   //casa
-  Parede_da_casa();
-  time_chamine++;
-  if(time_chamine % 7 == 0){
-    cont_chamine++;
-  }
-  Chamine(cont_chamine);
+  parede_da_casa();
+  chamine(cont_chamine);
   telhado();
-  porta();
-  
-  time_janela++;
-  if(time_janela <= 600){
-    open = true;
-  }else{
-    open = false;
-  }
-  time_janela %= 1200;
-  
+  porta();  
   janela(open);
   macaneta();
   
   //pessoa
   if(dist_sol < 600 && dist_sol > 0){
-    if(dist_sol < 300 && x > 85){
-      d = 0;
-      x--;
-    }else if(dist_sol > 392){
-      d = 1;
-      x++;
-    }
-  
     corpo(x, y, d);
     cabeca(x, y);
     chapeu(x, y, d);
