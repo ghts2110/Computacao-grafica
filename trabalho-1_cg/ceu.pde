@@ -1,5 +1,5 @@
 void sol(float dist){  
-  int numRaios = 315; // Número de raios do sol
+  int numRaios = 600; // Número de raios do sol
   float raioExterno = 50; // Raio externo do sol
   float raioInterno = 0; // Raio interno do sol
   
@@ -15,7 +15,7 @@ void sol(float dist){
 }
 
 void lua(float dist, int fase_lua, int r, int g, int b){
-  int numRaios = 255; // Número de raios do sol
+  int numRaios = 600; // Número de raios do sol
   float raioExterno = 40; // Raio externo do sol
   float raioInterno = 0; // Raio interno do sol
     
@@ -32,7 +32,7 @@ void lua(float dist, int fase_lua, int r, int g, int b){
   }
   
   if(fase_lua == 0){
-    numRaios = 255; // Número de raios do sol
+    numRaios = 600; // Número de raios do sol
     raioExterno = 35; // Raio externo do sol
     raioInterno = 0; // Raio interno do sol
     
@@ -46,7 +46,7 @@ void lua(float dist, int fase_lua, int r, int g, int b){
       line(x1+5, y1, x2+5, y2);
     }
   }else if(fase_lua == 1){
-    numRaios = 255; // Número de raios do sol
+    numRaios = 600; // Número de raios do sol
     raioExterno = 25; // Raio externo do sol
     raioInterno = 0; // Raio interno do sol
     
@@ -60,7 +60,7 @@ void lua(float dist, int fase_lua, int r, int g, int b){
       line(x1+15, y1, x2+5, y2);
     }
   }else if(fase_lua == 3){
-    numRaios = 255; // Número de raios do sol
+    numRaios = 600; // Número de raios do sol
     raioExterno = 25; // Raio externo do sol
     raioInterno = 0; // Raio interno do sol
     
@@ -74,7 +74,7 @@ void lua(float dist, int fase_lua, int r, int g, int b){
       line(x1-15, y1, x2+5, y2);
     }
   }else if(fase_lua == 4){
-    numRaios = 255; // Número de raios do sol
+    numRaios = 600; // Número de raios do sol
     raioExterno = 35; // Raio externo do sol
     raioInterno = 0; // Raio interno do sol
     
@@ -118,30 +118,30 @@ void passaro(double dp[]){
     line(x - 15, y - 10, x-5, y - 10);
     line(x+15, y-10, x+5, y - 10); 
     
-    line(x+50, y, x+5+50, y - 10);   
-    line(x+50, y, x-5+50, y - 10);
-    line(x+50 - 15, y - 10, x-5+50, y - 10);
-    line(x+15+50, y-10, x+5+50, y - 10);
+    line(x-300, y, x-300+5, y - 10);   
+    line(x-300, y, x-300-5, y - 10);
+    line(x-300 - 15, y - 10, x-300-5, y - 10);
+    line(x-300+15, y-10, x-300+5, y - 10);
     
-    line(x+25, y+50, x+5+25, y-10+50);   
-    line(x+25, y+50, x-5+25, y-10+50);
-    line(x+25-15, y-10+50, x-5+25, y-10+50);
-    line(x+15+25, y-10+50, x+5+25, y-10+50); 
+    line(x+25, y-300, x+5+25, y-300-10);   
+    line(x+25, y-300, x-5+25, y-300-10);
+    line(x+25-15, y-300-10, x-5+25, y-300-10);
+    line(x+15+25, y-300-10, x+5+25, y-300-10); 
     
-    line(x+25, y-50, x+5+25, y-10-50);   
-    line(x+25, y-50, x-5+25, y-10-50);
-    line(x+25-15, y-10-50, x-5+25, y-10-50);
-    line(x+15+25, y-10-50, x+5+25, y-10-50); 
+    line(x-250, y-250, x-250+5, y-250-10);   
+    line(x-250, y-250, x-250-5, y-250-10);
+    line(x-250-15, y-250-10, x-250-5, y-250-10);
+    line(x-250+15, y-250-10, x-250+5, y-250-10); 
     
-    line(x+60, y-55, x+5+60, y-10-55);   
-    line(x+60, y-55, x-5+60, y-10-55);
-    line(x+60-15, y-10-55, x-5+60, y-10-55);
-    line(x+15+60, y-10-55, x+5+60, y-10-55);
+    line(x+100, y-155, x+100+5, y-155-10);   
+    line(x+100, y-155, x+100-5, y-155-10);
+    line(x+100-15, y-155-10, x+100-5, y-155-10);
+    line(x+100+15, y-155-10, x+100+5, y-155-10);
     
-    line(x+10, y-80, x+5+10, y-10-80);   
-    line(x+10, y-80, x-5+10, y-10-80);
-    line(x+10-15, y-10-80, x-5+10, y-10-80);
-    line(x+15+10, y-10-80, x+5+10, y-10-80);
+    line(x-70, y-80, x-70+5, y-10-80);   
+    line(x-70, y-80, x-70-5, y-10-80);
+    line(x-70-15, y-10-80, x-70-5, y-10-80);
+    line(x-70+15, y-10-80, x-70+5, y-10-80);
     
     angle += speed;  // Incrementa o ângulo para fazer o ponto se mover em círculos
 }

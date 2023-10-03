@@ -7,9 +7,6 @@ void fib(){
   } 
 }
 
-
-float x_nuvem = 700, y_nuvem, nuvem = 5;
-
 //pessoa 
 int x = 250, y = 490, d = 0;
 
@@ -22,8 +19,6 @@ float radius = 250;    // Raio do círculo
 float angle = 0;       // Ângulo inicial
 float speed = 0.02;    // Velocidade de rotação
 boolean validate_volta = true;
-
-
 
 //mar
 int time = 0, t = 0, nivel = 600;
@@ -40,6 +35,14 @@ void setup(){
   centerY = height / 2;
   fib();
   noLoop();
+  noSmooth();
+  Thread t = new Thread(new SunThread()); // Cria uma nova thread usando a classe SunThread
+  t.start(); // Inicia a thread
+  try{
+    t.sleep(1000);
+  }catch(Exception e){
+    
+  }
 }
 
 void draw() {
@@ -48,7 +51,6 @@ void draw() {
   //chao
   grama();
   areia();
-  
   if(time % 3 == 0 && val1){
     t++;
     if(t == 20){
@@ -158,5 +160,12 @@ void draw() {
   }
   
     passaro(dp);
+}
 
+class SunThread implements Runnable {
+  public void run() {
+    while (true) {
+      redraw();
+    }
+  }
 }
