@@ -145,5 +145,9 @@ void passaro(double dp[]){
     
     angle += speed;  // Incrementa o ângulo para fazer o ponto se mover em círculos
 }
+
+void nuvem(float x_nuvem, float y_nuvem){
+  
+}
   
   
