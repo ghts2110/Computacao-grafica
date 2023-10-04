@@ -1,8 +1,11 @@
 class Nuvem implements Runnable {
   public void run() {
     while (true) {
-      
-      redraw();
+      x_nuvem += vel;
+      if (x > width + tamanho) {
+      x_nuvem = -(tamanho);
+}
+  redraw();
       
       try {
         Thread.sleep(15); 

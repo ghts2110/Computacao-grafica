@@ -146,8 +146,28 @@ void passaro(double dp[]){
     angle += speed;  // Incrementa o ângulo para fazer o ponto se mover em círculos
 }
 
-void nuvem(float x_nuvem, float y_nuvem){
-  
+void nuvem(float x, float y,float esp, float tamanho ){
+    float diametroCirculo = tamanho * 0.8;
+    float quantidadeCirculos = 5;
+
+    stroke(255);
+    for (int i = 0; i < quantidadeCirculos; i++) {
+      float posX = x + i * esp;
+      float posY = y - diametroCirculo / 2 + random(-1, 1);
+      desenharCirculo(posX, posY, diametroCirculo);
 }
-  
-  
+}
+    void desenharCirculo(float x, float y, float diametro) {
+    int numPontos = 600;
+
+    for (int i = 0; i < numPontos; i++) {
+      float anguloIncremento = TWO_PI / numPontos *i;
+      float angulo1 = i * anguloIncremento;
+      float angulo2 = (i + 1) * anguloIncremento;
+      float x1 = x + cos(angulo1) * (diametro / 2);
+      float y1 = y + sin(angulo1) * (diametro / 2);
+      float x2 = x + cos(angulo2) * (diametro / 2);
+      float y2 = y + sin(angulo2) * (diametro / 2);
+      line(x1, y1, x2, y2);
+    }
+  }

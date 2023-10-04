@@ -29,6 +29,14 @@ int time_janela = 0;
 boolean open = true;
 int time_chamine = 0, cont_chamine = 0;
 
+//Nuvem1
+float x_nuvem = 0;
+float y_nuvem = 150;
+float tamanho = 50;
+float esp = 20;
+float vel = 1; 
+
+
 // thread
 Thread tm = new Thread(new Mar());
 Thread ts = new Thread(new Sol());
@@ -36,6 +44,7 @@ Thread tl = new Thread(new Lua());
 Thread tfc = new Thread(new Fumaca_chamine());
 Thread tj = new Thread(new Janela());
 Thread tmp = new Thread(new Movimento_pessoa());
+Thread tn = new Thread(new Nuvem());
 
 void setup(){
   size(600, 600);
@@ -51,6 +60,7 @@ void setup(){
   tfc.start();
   tj.start();
   tmp.start();
+  tn.start();
 }
 
 void draw() {
@@ -86,4 +96,5 @@ void draw() {
   }
   
     passaro(dp);
+    nuvem(x_nuvem,y_nuvem,esp,tamanho);
 }
