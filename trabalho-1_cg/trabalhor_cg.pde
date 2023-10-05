@@ -14,7 +14,9 @@ int d = 0;
 
 // ceu
 int r=75, g=135, b=175, time_luz = 0, fase_lua = -1;
-float dist_sol = -60, dist_lua = 670;
+float[] mat_sol = new float[2];
+float[] mat_lua = new float[2];
+
 int time_passaro = 2;
 float centerX, centerY; // Centro do círculo
 float radius = 250;    // Raio do círculo
@@ -52,6 +54,7 @@ void setup(){
   centerY = height / 2;
   fib();
   pss();
+  ls();
   
   noLoop();
   noSmooth();
@@ -75,14 +78,14 @@ void draw() {
   arvore();
 
   //ceu
-  if(dist_sol <= 660){
-    sol(dist_sol);
+  if(mat_sol[0] <= 660){
+    sol();
   }
-  if(dist_lua <= 660){
-    if(dist_lua < 700){
+  if(mat_lua[0] <= 660){
+    if(mat_lua[0] < 700){
       vagalumi();
     }
-    lua(dist_lua, fase_lua, r, g, b);
+    lua(fase_lua);
   }
   
   
@@ -95,7 +98,7 @@ void draw() {
   macaneta();
   
   //pessoa
-  if(dist_sol < 600 && dist_sol > 0){
+  if(mat_sol[0] < 600 && mat_sol[0] > 0){
     corpo(d);
     cabeca();
     chapeu(d);

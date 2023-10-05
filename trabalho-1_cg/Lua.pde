@@ -1,10 +1,10 @@
 class Lua implements Runnable {
   public void run() {
     while (true) {
-      if(dist_lua <= 660){
-        dist_lua+=1.2;
+      if(mat_lua[0] <= 660){
+        mat_lua[0]+=1.2;
         
-        if(time_luz % 4 == 0 && dist_lua <= 300){
+        if(time_luz % 4 == 0 && mat_lua[0] <= 300){
            r--;
            g--;
            b--; 
@@ -13,8 +13,8 @@ class Lua implements Runnable {
            g++;
            b++;
          }
-        if(dist_lua > 659){
-          dist_sol = -60;
+        if(mat_lua[0] > 659){
+          mat_sol[0] = -60;
         }
       }
       redraw();

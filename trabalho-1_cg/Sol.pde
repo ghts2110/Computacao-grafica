@@ -2,10 +2,10 @@ class Sol implements Runnable {
   public void run() {
     while (true) {
       time_luz++;
-      if(dist_sol <= 660){
-         dist_sol+=1.2;
+      if(mat_sol[0] <= 660){
+         mat_sol[0]+=1.2;
          
-         if(time_luz  % 3 == 0 && dist_sol <= 300){
+         if(time_luz  % 3 == 0 && mat_sol[0] <= 300){
            r++;
            g++;
            b++; 
@@ -15,10 +15,10 @@ class Sol implements Runnable {
            b--;
          }
 
-         if(dist_sol > 659){
+         if(mat_sol[0] > 659){
            fase_lua++;
            fase_lua %= 6;
-           dist_lua = -60;
+           mat_lua[0] = -60;
          }
       }
       redraw();
