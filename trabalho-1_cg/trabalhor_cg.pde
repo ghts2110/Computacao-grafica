@@ -23,12 +23,8 @@ float radius = 250;    // Raio do círculo
 float angle = 0;       // Ângulo inicial
 float speed = 0.02;    // Velocidade de rotação
 boolean validate_volta = true;
-float rotatingX_vagalumi = 200; // Posição inicial x do ponto rotacionado
-float rotatingY_vagalumi = 200; // Posição inicial y do ponto rotacionado
-float centerX_vagalumi = 290; // Coordenada x do centro da tela
-float centerY_vagalumi = 280; // Coordenada y do centro da tela
-float angle_vagalumi = 1; // Ângulo de rotação inicial em radianos
-float rotatedX_vagalumi, rotatedY_vagalumi;
+float[] mat_vagalume = new float[8];
+float angulo_vagalume = 0;
 
 //mar
 int time = 0, t = 0, nivel = 600;
@@ -55,6 +51,7 @@ void setup(){
   fib();
   pss();
   ls();
+  v();
   
   noLoop();
   noSmooth();
@@ -76,18 +73,6 @@ void draw() {
   areia();
   mar(nivel, t);  
   arvore();
-
-  //ceu
-  if(mat_sol[0] <= 660){
-    sol();
-  }
-  if(mat_lua[0] <= 660){
-    if(mat_lua[0] < 700){
-      vagalumi();
-    }
-    lua(fase_lua);
-  }
-  
   
   //casa
   parede_da_casa();
@@ -104,5 +89,16 @@ void draw() {
     chapeu(d);
   }
   
-    passaro(dp);
+  //ceu
+  if(mat_sol[0] <= 660){
+    sol();
+  }
+  if(mat_lua[0] <= 660){
+    if(mat_lua[0] < 700){
+      vagalume();
+    }
+    lua(fase_lua);
+  }
+  
+  passaro(dp);
 }

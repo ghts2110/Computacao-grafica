@@ -150,7 +150,7 @@ void nuvem(float x_nuvem, float y_nuvem){
   
 }
   
-void vagalumi(){
+void vagalume(){
   int numRaios = 10; // Número de raios do sol
   float raioExterno = 1; // Raio externo do sol
   float raioInterno = 0; // Raio interno do sol
@@ -158,13 +158,42 @@ void vagalumi(){
   stroke(0, 255, 0);
   for (int i = 0; i < numRaios; i++) {
     float angulo = TWO_PI / numRaios * i;
-    float x1 = cos(angulo) * raioExterno + rotatedX_vagalumi;
-    float y1 = sin(angulo) * raioExterno + rotatedY_vagalumi;
-    float x2 = cos(angulo) * raioInterno + rotatedX_vagalumi;
-    float y2 = sin(angulo) * raioInterno + rotatedY_vagalumi;
+    float x1 = cos(angulo) * raioExterno + mat_vagalume[0];
+    float y1 = sin(angulo) * raioExterno + mat_vagalume[1];
+    float x2 = cos(angulo) * raioInterno + mat_vagalume[0];
+    float y2 = sin(angulo) * raioInterno + mat_vagalume[1];
     line(x1, y1, x2, y2);
   }
  
+  stroke(0, 255, 0);
+  for (int i = 0; i < numRaios; i++) {
+    float angulo = TWO_PI / numRaios * i;
+    float x1 = cos(angulo) * raioExterno + mat_vagalume[2];
+    float y1 = sin(angulo) * raioExterno + mat_vagalume[3];
+    float x2 = cos(angulo) * raioInterno + mat_vagalume[2];
+    float y2 = sin(angulo) * raioInterno + mat_vagalume[3];
+    line(x1, y1, x2, y2);
+  }
+  
+  stroke(0, 255, 0);
+  for (int i = 0; i < numRaios; i++) {
+    float angulo = TWO_PI / numRaios * i;
+    float x1 = cos(angulo) * raioExterno + mat_vagalume[4];
+    float y1 = sin(angulo) * raioExterno + mat_vagalume[5];
+    float x2 = cos(angulo) * raioInterno + mat_vagalume[4];
+    float y2 = sin(angulo) * raioInterno + mat_vagalume[5];
+    line(x1, y1, x2, y2);
+  }
+  
+  stroke(0, 255, 0);
+  for (int i = 0; i < numRaios; i++) {
+    float angulo = TWO_PI / numRaios * i;
+    float x1 = cos(angulo) * raioExterno + mat_vagalume[6];
+    float y1 = sin(angulo) * raioExterno + mat_vagalume[7];
+    float x2 = cos(angulo) * raioInterno + mat_vagalume[6];
+    float y2 = sin(angulo) * raioInterno + mat_vagalume[7];
+    line(x1, y1, x2, y2);
+  }
 }
 
 void ls(){
@@ -172,5 +201,19 @@ void ls(){
   mat_sol[1] = 100;
   mat_lua[0] = 670;
   mat_lua[1] = 100;
+}
+
+void v(){
+  mat_vagalume[0] = 100;
+  mat_vagalume[1] = 100;
+  
+  mat_vagalume[2] = 100;
+  mat_vagalume[3] = 100;
+  
+  mat_vagalume[4] = 100;
+  mat_vagalume[5] = 100;
+  
+  mat_vagalume[6] = 100;
+  mat_vagalume[7] = 100;
 }
   
