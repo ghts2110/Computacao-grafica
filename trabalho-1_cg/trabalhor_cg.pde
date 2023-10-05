@@ -16,6 +16,8 @@ int d = 0;
 int r=75, g=135, b=175, time_luz = 0, fase_lua = -1;
 float[] mat_sol = new float[2];
 float[] mat_lua = new float[2];
+float[] mat_vagalume = new float[8];
+float raioExterno_meteoro = 20; 
 
 int time_passaro = 2;
 float centerX, centerY; // Centro do círculo
@@ -23,7 +25,6 @@ float radius = 250;    // Raio do círculo
 float angle = 0;       // Ângulo inicial
 float speed = 0.02;    // Velocidade de rotação
 boolean validate_volta = true;
-float[] mat_vagalume = new float[8];
 float angulo_vagalume = 0;
 
 //mar
@@ -51,7 +52,7 @@ void setup(){
   fib();
   pss();
   ls();
-  v();
+  vm();
   
   noLoop();
   noSmooth();
@@ -63,6 +64,7 @@ void setup(){
   tj.start();
   tmp.start();
   tv.start();
+
 }
 
 void draw() {

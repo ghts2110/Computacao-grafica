@@ -203,7 +203,7 @@ void ls(){
   mat_lua[1] = 100;
 }
 
-void v(){
+void vm(){
   mat_vagalume[0] = 100;
   mat_vagalume[1] = 100;
   
