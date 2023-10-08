@@ -22,7 +22,18 @@ class Lua implements Runnable {
            b++;
          }
         if(mat_lua[0][0] > 659){
-          mat_sol[0] = -60;
+          mat_sol[0][0] = -60;
+          mat_sol[1][0] = -65;
+          mat_sol[2][0] = -65;
+          mat_sol[3][0] = -80;
+          mat_sol[4][0] = -80;
+          mat_sol[5][0] = -95;
+          mat_sol[6][0] = -95;
+          mat_sol[7][0] = -110;
+          mat_sol[8][0] = -110;
+          mat_sol[9][0] = -125;
+          mat_sol[10][0] = -125;
+          mat_sol[11][0] = -130;
         }
       }
       redraw();

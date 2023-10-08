@@ -1,17 +1,81 @@
 void sol(){  
-  int numRaios = 600; // Número de raios do sol
-  float raioExterno = 50; // Raio externo do sol
-  float raioInterno = 0; // Raio interno do sol
-  
   stroke(255, 204, 0);
-  for (int i = 0; i < numRaios; i++) {
-    float angulo = TWO_PI / numRaios * i;
-    float x1 = cos(angulo) * raioExterno + mat_sol[0];
-    float y1 = sin(angulo) * raioExterno + mat_sol[1];
-    float x2 = cos(angulo) * raioInterno + mat_sol[0];
-    float y2 = sin(angulo) * raioInterno + mat_sol[1];
-    line(x1, y1, x2, y2);
-  }
+  line(mat_sol[0][0], mat_sol[0][1], mat_sol[1][0], mat_sol[1][1]);
+  line(mat_sol[0][0], mat_sol[0][1], mat_sol[2][0], mat_sol[2][1]);
+  line(mat_sol[0][0], mat_sol[0][1], mat_sol[3][0], mat_sol[3][1]);
+  line(mat_sol[0][0], mat_sol[0][1], mat_sol[4][0], mat_sol[4][1]);
+  line(mat_sol[0][0], mat_sol[0][1], mat_sol[5][0], mat_sol[5][1]);
+  line(mat_sol[0][0], mat_sol[0][1], mat_sol[6][0], mat_sol[6][1]);
+  line(mat_sol[0][0], mat_sol[0][1], mat_sol[7][0], mat_sol[7][1]);
+  line(mat_sol[0][0], mat_sol[0][1], mat_sol[8][0], mat_sol[8][1]);
+  line(mat_sol[0][0], mat_sol[0][1], mat_sol[9][0], mat_sol[9][1]);
+  line(mat_sol[0][0], mat_sol[0][1], mat_sol[10][0], mat_sol[10][1]);
+  line(mat_sol[0][0], mat_sol[0][1], mat_sol[11][0], mat_sol[11][1]);
+  
+  line(mat_sol[1][0], mat_sol[1][1], mat_sol[2][0], mat_sol[2][1]);
+  line(mat_sol[1][0], mat_sol[1][1], mat_sol[3][0], mat_sol[3][1]);
+  line(mat_sol[1][0], mat_sol[1][1], mat_sol[4][0], mat_sol[4][1]);
+  line(mat_sol[1][0], mat_sol[1][1], mat_sol[5][0], mat_sol[5][1]);
+  line(mat_sol[1][0], mat_sol[1][1], mat_sol[6][0], mat_sol[6][1]);
+  line(mat_sol[1][0], mat_sol[1][1], mat_sol[7][0], mat_sol[7][1]);
+  line(mat_sol[1][0], mat_sol[1][1], mat_sol[8][0], mat_sol[8][1]);
+  line(mat_sol[1][0], mat_sol[1][1], mat_sol[9][0], mat_sol[9][1]);
+  line(mat_sol[1][0], mat_sol[1][1], mat_sol[10][0], mat_sol[10][1]);
+  line(mat_sol[1][0], mat_sol[1][1], mat_sol[11][0], mat_sol[11][1]);
+  
+  line(mat_sol[2][0], mat_sol[2][1], mat_sol[3][0], mat_sol[3][1]);
+  line(mat_sol[2][0], mat_sol[2][1], mat_sol[4][0], mat_sol[4][1]);
+  line(mat_sol[2][0], mat_sol[2][1], mat_sol[5][0], mat_sol[5][1]);
+  line(mat_sol[2][0], mat_sol[2][1], mat_sol[6][0], mat_sol[6][1]);
+  line(mat_sol[2][0], mat_sol[2][1], mat_sol[7][0], mat_sol[7][1]);
+  line(mat_sol[2][0], mat_sol[2][1], mat_sol[8][0], mat_sol[8][1]);
+  line(mat_sol[2][0], mat_sol[2][1], mat_sol[9][0], mat_sol[9][1]);
+  line(mat_sol[2][0], mat_sol[2][1], mat_sol[10][0], mat_sol[10][1]);
+  line(mat_sol[2][0], mat_sol[2][1], mat_sol[11][0], mat_sol[11][1]);
+  
+  line(mat_sol[3][0], mat_sol[3][1], mat_sol[4][0], mat_sol[4][1]);
+  line(mat_sol[3][0], mat_sol[3][1], mat_sol[5][0], mat_sol[5][1]);
+  line(mat_sol[3][0], mat_sol[3][1], mat_sol[6][0], mat_sol[6][1]);
+  line(mat_sol[3][0], mat_sol[3][1], mat_sol[7][0], mat_sol[7][1]);
+  line(mat_sol[3][0], mat_sol[3][1], mat_sol[8][0], mat_sol[8][1]);
+  line(mat_sol[3][0], mat_sol[3][1], mat_sol[9][0], mat_sol[9][1]);
+  line(mat_sol[3][0], mat_sol[3][1], mat_sol[10][0], mat_sol[10][1]);
+  line(mat_sol[3][0], mat_sol[3][1], mat_sol[11][0], mat_sol[11][1]);
+  
+  line(mat_sol[4][0], mat_sol[4][1], mat_sol[5][0], mat_sol[5][1]);
+  line(mat_sol[4][0], mat_sol[4][1], mat_sol[6][0], mat_sol[6][1]);
+  line(mat_sol[4][0], mat_sol[4][1], mat_sol[7][0], mat_sol[7][1]);
+  line(mat_sol[4][0], mat_sol[4][1], mat_sol[8][0], mat_sol[8][1]);
+  line(mat_sol[4][0], mat_sol[4][1], mat_sol[9][0], mat_sol[9][1]);
+  line(mat_sol[4][0], mat_sol[4][1], mat_sol[10][0], mat_sol[10][1]);
+  line(mat_sol[4][0], mat_sol[4][1], mat_sol[11][0], mat_sol[11][1]);
+  
+  line(mat_sol[5][0], mat_sol[5][1], mat_sol[6][0], mat_sol[6][1]);
+  line(mat_sol[5][0], mat_sol[5][1], mat_sol[7][0], mat_sol[7][1]);
+  line(mat_sol[5][0], mat_sol[5][1], mat_sol[8][0], mat_sol[8][1]);
+  line(mat_sol[5][0], mat_sol[5][1], mat_sol[9][0], mat_sol[9][1]);
+  line(mat_sol[5][0], mat_sol[5][1], mat_sol[10][0], mat_sol[10][1]);
+  line(mat_sol[5][0], mat_sol[5][1], mat_sol[11][0], mat_sol[11][1]);
+  
+  line(mat_sol[6][0], mat_sol[6][1], mat_sol[7][0], mat_sol[7][1]);
+  line(mat_sol[6][0], mat_sol[6][1], mat_sol[8][0], mat_sol[8][1]);
+  line(mat_sol[6][0], mat_sol[6][1], mat_sol[9][0], mat_sol[9][1]);
+  line(mat_sol[6][0], mat_sol[6][1], mat_sol[10][0], mat_sol[10][1]);
+  line(mat_sol[6][0], mat_sol[6][1], mat_sol[11][0], mat_sol[11][1]);
+  
+  line(mat_sol[7][0], mat_sol[7][1], mat_sol[8][0], mat_sol[8][1]);
+  line(mat_sol[7][0], mat_sol[7][1], mat_sol[9][0], mat_sol[9][1]);
+  line(mat_sol[7][0], mat_sol[7][1], mat_sol[10][0], mat_sol[10][1]);
+  line(mat_sol[7][0], mat_sol[7][1], mat_sol[11][0], mat_sol[11][1]);
+  
+  line(mat_sol[8][0], mat_sol[8][1], mat_sol[9][0], mat_sol[9][1]);
+  line(mat_sol[8][0], mat_sol[8][1], mat_sol[10][0], mat_sol[10][1]);
+  line(mat_sol[8][0], mat_sol[8][1], mat_sol[11][0], mat_sol[11][1]);
+  
+  line(mat_sol[9][0], mat_sol[9][1], mat_sol[10][0], mat_sol[10][1]);
+  line(mat_sol[9][0], mat_sol[9][1], mat_sol[11][0], mat_sol[11][1]);
+  
+    line(mat_sol[10][0], mat_sol[10][1], mat_sol[11][0], mat_sol[11][1]);
 }
 
 void lua(int fase_lua){
@@ -249,24 +313,46 @@ void vagalume(){
 }
 
 void ls(){
-  mat_sol[0] = -60;
-  mat_sol[1] = 100;
+  mat_sol[0][0] = -60;
+  mat_sol[0][1] = 100;
+  mat_sol[1][0] = -65;
+  mat_sol[1][1] = 85;
+  mat_sol[2][0] = -65;
+  mat_sol[2][1] = 115;
+  mat_sol[3][0] = -80;
+  mat_sol[3][1] = 70;
+  mat_sol[4][0] = -80;
+  mat_sol[4][1] = 130;
+  mat_sol[5][0] = -95;
+  mat_sol[5][1] = 65;
+  mat_sol[6][0] = -95;
+  mat_sol[6][1] = 135;
+  mat_sol[7][0] = -110;
+  mat_sol[7][1] = 70;
+  mat_sol[8][0] = -110;
+  mat_sol[8][1] = 130;
+  mat_sol[9][0] = -125;
+  mat_sol[9][1] = 85;
+  mat_sol[10][0] = -125;
+  mat_sol[10][1] = 115;
+  mat_sol[11][0] = -130;
+  mat_sol[11][1] = 100;
   
   mat_lua[0][0] = 670;
   mat_lua[0][1] = 100;
-  mat_lua[1][0] = 655;
-  mat_lua[1][1] = 75;
-  mat_lua[2][0] = 655;
-  mat_lua[2][1] = 125;
-  mat_lua[3][0] = 630;
-  mat_lua[3][1] = 60;
-  mat_lua[4][0] = 630;
-  mat_lua[4][1] = 140;
-  mat_lua[5][0] = 605;
-  mat_lua[5][1] = 75;
-  mat_lua[6][0] = 605;
-  mat_lua[6][1] = 125;
-  mat_lua[7][0] = 595;
+  mat_lua[1][0] = 665;
+  mat_lua[1][1] = 85;
+  mat_lua[2][0] = 665;
+  mat_lua[2][1] = 115;
+  mat_lua[3][0] = 650;
+  mat_lua[3][1] = 80;
+  mat_lua[4][0] = 650;
+  mat_lua[4][1] = 120;
+  mat_lua[5][0] = 635;
+  mat_lua[5][1] = 85;
+  mat_lua[6][0] = 635;
+  mat_lua[6][1] = 115;
+  mat_lua[7][0] = 630;
   mat_lua[7][1] = 100;
 }
 
