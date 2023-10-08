@@ -15,78 +15,130 @@ void sol(){
 }
 
 void lua(int fase_lua){
-  int numRaios = 600; // Número de raios do sol
-  float raioExterno = 40; // Raio externo do sol
-  float raioInterno = 0; // Raio interno do sol
-    
-  if(fase_lua != 5){   
-    stroke(255);
-    for (int i = 0; i < numRaios; i++) {
-      float angulo = TWO_PI / numRaios * i;
-      float x1 = cos(angulo) * raioExterno + mat_lua[0];
-      float y1 = sin(angulo) * raioExterno + mat_lua[1];
-      float x2 = cos(angulo) * raioInterno + mat_lua[0];
-      float y2 = sin(angulo) * raioInterno + mat_lua[1];
-      line(x1, y1, x2, y2);
-    }
-  }
-  
+  stroke(255);
   if(fase_lua == 0){
-    numRaios = 600; // Número de raios do sol
-    raioExterno = 35; // Raio externo do sol
-    raioInterno = 0; // Raio interno do sol
+    line(mat_lua[1][0], mat_lua[1][1], mat_lua[3][0], mat_lua[3][1]);
+    line(mat_lua[1][0], mat_lua[1][1], mat_lua[5][0], mat_lua[5][1]);
+    line(mat_lua[1][0], mat_lua[1][1], mat_lua[7][0], mat_lua[7][1]);
     
-    stroke(r, g, b);
-    for (int i = 0; i < numRaios; i++) {
-      float angulo = TWO_PI / numRaios * i;
-      float x1 = cos(angulo) * raioExterno + mat_lua[0];
-      float y1 = sin(angulo) * raioExterno + mat_lua[1];
-      float x2 = cos(angulo) * raioInterno + mat_lua[0];
-      float y2 = sin(angulo) * raioInterno + mat_lua[1];
-      line(x1+5, y1, x2+5, y2);
-    }
+    line(mat_lua[2][0], mat_lua[2][1], mat_lua[4][0], mat_lua[4][1]);
+    line(mat_lua[2][0], mat_lua[2][1], mat_lua[6][0], mat_lua[6][1]);
+    line(mat_lua[2][0], mat_lua[2][1], mat_lua[7][0], mat_lua[7][1]);
+    
+    line(mat_lua[3][0], mat_lua[3][1], mat_lua[5][0], mat_lua[5][1]);
+    line(mat_lua[3][0], mat_lua[3][1], mat_lua[6][0], mat_lua[6][1]);
+    line(mat_lua[3][0], mat_lua[3][1], mat_lua[7][0], mat_lua[7][1]);
+    
+    line(mat_lua[4][0], mat_lua[4][1], mat_lua[5][0], mat_lua[5][1]);
+    line(mat_lua[4][0], mat_lua[4][1], mat_lua[6][0], mat_lua[6][1]);
+    line(mat_lua[4][0], mat_lua[4][1], mat_lua[7][0], mat_lua[7][1]);
+    
+    line(mat_lua[5][0], mat_lua[5][1], mat_lua[6][0], mat_lua[6][1]);
+    line(mat_lua[5][0], mat_lua[5][1], mat_lua[7][0], mat_lua[7][1]);
+    
+    line(mat_lua[6][0], mat_lua[6][1], mat_lua[7][0], mat_lua[7][1]);
   }else if(fase_lua == 1){
-    numRaios = 600; // Número de raios do sol
-    raioExterno = 25; // Raio externo do sol
-    raioInterno = 0; // Raio interno do sol
+    line(mat_lua[1][0], mat_lua[1][1], mat_lua[3][0], mat_lua[3][1]);
+    line(mat_lua[1][0], mat_lua[1][1], mat_lua[5][0], mat_lua[5][1]);
+    line(mat_lua[1][0], mat_lua[1][1], mat_lua[6][0], mat_lua[6][1]);
+    line(mat_lua[1][0], mat_lua[1][1], mat_lua[7][0], mat_lua[7][1]);
     
-    stroke(r, g, b);
-    for (int i = 0; i < numRaios; i++) {
-      float angulo = TWO_PI / numRaios * i;
-      float x1 = cos(angulo) * raioExterno + mat_lua[0];
-      float y1 = sin(angulo) * raioExterno + mat_lua[1];
-      float x2 = cos(angulo) * raioInterno + mat_lua[0];
-      float y2 = sin(angulo) * raioInterno + mat_lua[1];
-      line(x1+15, y1, x2+5, y2);
-    }
+    line(mat_lua[2][0], mat_lua[2][1], mat_lua[4][0], mat_lua[4][1]);
+    line(mat_lua[2][0], mat_lua[2][1], mat_lua[5][0], mat_lua[5][1]);
+    line(mat_lua[2][0], mat_lua[2][1], mat_lua[6][0], mat_lua[6][1]);
+    line(mat_lua[2][0], mat_lua[2][1], mat_lua[7][0], mat_lua[7][1]);
+    
+    line(mat_lua[3][0], mat_lua[3][1], mat_lua[4][0], mat_lua[4][1]);
+    line(mat_lua[3][0], mat_lua[3][1], mat_lua[5][0], mat_lua[5][1]);
+    line(mat_lua[3][0], mat_lua[3][1], mat_lua[6][0], mat_lua[6][1]);
+    line(mat_lua[3][0], mat_lua[3][1], mat_lua[7][0], mat_lua[7][1]);
+    
+    line(mat_lua[4][0], mat_lua[4][1], mat_lua[5][0], mat_lua[5][1]);
+    line(mat_lua[4][0], mat_lua[4][1], mat_lua[6][0], mat_lua[6][1]);
+    line(mat_lua[4][0], mat_lua[4][1], mat_lua[7][0], mat_lua[7][1]);
+    
+    line(mat_lua[5][0], mat_lua[5][1], mat_lua[6][0], mat_lua[6][1]);
+    line(mat_lua[5][0], mat_lua[5][1], mat_lua[7][0], mat_lua[7][1]);
+    
+    line(mat_lua[6][0], mat_lua[6][1], mat_lua[7][0], mat_lua[7][1]);
+  }else if(fase_lua == 2){
+    line(mat_lua[0][0], mat_lua[0][1], mat_lua[1][0], mat_lua[1][1]);
+    line(mat_lua[0][0], mat_lua[0][1], mat_lua[2][0], mat_lua[2][1]);
+    line(mat_lua[0][0], mat_lua[0][1], mat_lua[3][0], mat_lua[3][1]);
+    line(mat_lua[0][0], mat_lua[0][1], mat_lua[4][0], mat_lua[4][1]);
+    line(mat_lua[0][0], mat_lua[0][1], mat_lua[5][0], mat_lua[5][1]);
+    line(mat_lua[0][0], mat_lua[0][1], mat_lua[6][0], mat_lua[6][1]);
+    line(mat_lua[0][0], mat_lua[0][1], mat_lua[7][0], mat_lua[7][1]);
+    
+    line(mat_lua[1][0], mat_lua[1][1], mat_lua[2][0], mat_lua[2][1]);
+    line(mat_lua[1][0], mat_lua[1][1], mat_lua[3][0], mat_lua[3][1]);
+    line(mat_lua[1][0], mat_lua[1][1], mat_lua[4][0], mat_lua[4][1]);
+    line(mat_lua[1][0], mat_lua[1][1], mat_lua[5][0], mat_lua[5][1]);
+    line(mat_lua[1][0], mat_lua[1][1], mat_lua[6][0], mat_lua[6][1]);
+    line(mat_lua[1][0], mat_lua[1][1], mat_lua[7][0], mat_lua[7][1]);
+    
+    line(mat_lua[2][0], mat_lua[2][1], mat_lua[3][0], mat_lua[3][1]);
+    line(mat_lua[2][0], mat_lua[2][1], mat_lua[4][0], mat_lua[4][1]);
+    line(mat_lua[2][0], mat_lua[2][1], mat_lua[5][0], mat_lua[5][1]);
+    line(mat_lua[2][0], mat_lua[2][1], mat_lua[6][0], mat_lua[6][1]);
+    line(mat_lua[2][0], mat_lua[2][1], mat_lua[7][0], mat_lua[7][1]);
+    
+    line(mat_lua[3][0], mat_lua[3][1], mat_lua[4][0], mat_lua[4][1]);
+    line(mat_lua[3][0], mat_lua[3][1], mat_lua[5][0], mat_lua[5][1]);
+    line(mat_lua[3][0], mat_lua[3][1], mat_lua[6][0], mat_lua[6][1]);
+    line(mat_lua[3][0], mat_lua[3][1], mat_lua[7][0], mat_lua[7][1]);
+    
+    line(mat_lua[4][0], mat_lua[4][1], mat_lua[5][0], mat_lua[5][1]);
+    line(mat_lua[4][0], mat_lua[4][1], mat_lua[6][0], mat_lua[6][1]);
+    line(mat_lua[4][0], mat_lua[4][1], mat_lua[7][0], mat_lua[7][1]);
+    
+    line(mat_lua[5][0], mat_lua[5][1], mat_lua[6][0], mat_lua[6][1]);
+    line(mat_lua[5][0], mat_lua[5][1], mat_lua[7][0], mat_lua[7][1]);
+    
+    line(mat_lua[6][0], mat_lua[6][1], mat_lua[7][0], mat_lua[7][1]);
   }else if(fase_lua == 3){
-    numRaios = 600; // Número de raios do sol
-    raioExterno = 25; // Raio externo do sol
-    raioInterno = 0; // Raio interno do sol
+    line(mat_lua[0][0], mat_lua[0][1], mat_lua[1][0], mat_lua[1][1]);
+    line(mat_lua[0][0], mat_lua[0][1], mat_lua[2][0], mat_lua[2][1]);
+    line(mat_lua[0][0], mat_lua[0][1], mat_lua[3][0], mat_lua[3][1]);
+    line(mat_lua[0][0], mat_lua[0][1], mat_lua[4][0], mat_lua[4][1]);
+    line(mat_lua[0][0], mat_lua[0][1], mat_lua[5][0], mat_lua[5][1]);
+    line(mat_lua[0][0], mat_lua[0][1], mat_lua[6][0], mat_lua[6][1]);
     
-    stroke(r, g, b);
-    for (int i = 0; i < numRaios; i++) {
-      float angulo = TWO_PI / numRaios * i;
-      float x1 = cos(angulo) * raioExterno + mat_lua[0];
-      float y1 = sin(angulo) * raioExterno + mat_lua[1];
-      float x2 = cos(angulo) * raioInterno + mat_lua[0];
-      float y2 = sin(angulo) * raioInterno + mat_lua[1];
-      line(x1-15, y1, x2+5, y2);
-    }
+    line(mat_lua[1][0], mat_lua[1][1], mat_lua[2][0], mat_lua[2][1]);
+    line(mat_lua[1][0], mat_lua[1][1], mat_lua[3][0], mat_lua[3][1]);
+    line(mat_lua[1][0], mat_lua[1][1], mat_lua[4][0], mat_lua[4][1]);
+    line(mat_lua[1][0], mat_lua[1][1], mat_lua[5][0], mat_lua[5][1]);
+    line(mat_lua[1][0], mat_lua[1][1], mat_lua[6][0], mat_lua[6][1]);
+    
+    line(mat_lua[2][0], mat_lua[2][1], mat_lua[3][0], mat_lua[3][1]);
+    line(mat_lua[2][0], mat_lua[2][1], mat_lua[4][0], mat_lua[4][1]);
+    line(mat_lua[2][0], mat_lua[2][1], mat_lua[5][0], mat_lua[5][1]);
+    line(mat_lua[2][0], mat_lua[2][1], mat_lua[6][0], mat_lua[6][1]);
+    
+    line(mat_lua[3][0], mat_lua[3][1], mat_lua[4][0], mat_lua[4][1]);
+    line(mat_lua[3][0], mat_lua[3][1], mat_lua[5][0], mat_lua[5][1]);
+    
+    line(mat_lua[4][0], mat_lua[4][1], mat_lua[6][0], mat_lua[6][1]);
   }else if(fase_lua == 4){
-    numRaios = 600; // Número de raios do sol
-    raioExterno = 35; // Raio externo do sol
-    raioInterno = 0; // Raio interno do sol
+    line(mat_lua[0][0], mat_lua[0][1], mat_lua[1][0], mat_lua[1][1]);
+    line(mat_lua[0][0], mat_lua[0][1], mat_lua[2][0], mat_lua[2][1]);
+    line(mat_lua[0][0], mat_lua[0][1], mat_lua[3][0], mat_lua[3][1]);
+    line(mat_lua[0][0], mat_lua[0][1], mat_lua[4][0], mat_lua[4][1]);
+    line(mat_lua[0][0], mat_lua[0][1], mat_lua[5][0], mat_lua[5][1]);
+    line(mat_lua[0][0], mat_lua[0][1], mat_lua[6][0], mat_lua[6][1]);
     
-    stroke(r, g, b);
-    for (int i = 0; i < numRaios; i++) {
-      float angulo = TWO_PI / numRaios * i;
-      float x1 = cos(angulo) * raioExterno + mat_lua[0];
-      float y1 = sin(angulo) * raioExterno + mat_lua[1];
-      float x2 = cos(angulo) * raioInterno + mat_lua[0];
-      float y2 = sin(angulo) * raioInterno + mat_lua[1];
-      line(x1-5, y1, x2+5, y2);
-    }
+    line(mat_lua[1][0], mat_lua[1][1], mat_lua[2][0], mat_lua[2][1]);
+    line(mat_lua[1][0], mat_lua[1][1], mat_lua[3][0], mat_lua[3][1]);
+    line(mat_lua[1][0], mat_lua[1][1], mat_lua[4][0], mat_lua[4][1]);
+    line(mat_lua[1][0], mat_lua[1][1], mat_lua[5][0], mat_lua[5][1]);
+    
+    line(mat_lua[2][0], mat_lua[2][1], mat_lua[3][0], mat_lua[3][1]);
+    line(mat_lua[2][0], mat_lua[2][1], mat_lua[4][0], mat_lua[4][1]);
+    line(mat_lua[2][0], mat_lua[2][1], mat_lua[6][0], mat_lua[6][1]);
+    
+    line(mat_lua[3][0], mat_lua[3][1], mat_lua[5][0], mat_lua[5][1]);
+    
+    line(mat_lua[4][0], mat_lua[4][1], mat_lua[6][0], mat_lua[6][1]);
   }
   
 }
@@ -199,8 +251,23 @@ void vagalume(){
 void ls(){
   mat_sol[0] = -60;
   mat_sol[1] = 100;
-  mat_lua[0] = 670;
-  mat_lua[1] = 100;
+  
+  mat_lua[0][0] = 670;
+  mat_lua[0][1] = 100;
+  mat_lua[1][0] = 655;
+  mat_lua[1][1] = 75;
+  mat_lua[2][0] = 655;
+  mat_lua[2][1] = 125;
+  mat_lua[3][0] = 630;
+  mat_lua[3][1] = 60;
+  mat_lua[4][0] = 630;
+  mat_lua[4][1] = 140;
+  mat_lua[5][0] = 605;
+  mat_lua[5][1] = 75;
+  mat_lua[6][0] = 605;
+  mat_lua[6][1] = 125;
+  mat_lua[7][0] = 595;
+  mat_lua[7][1] = 100;
 }
 
 void vm(){

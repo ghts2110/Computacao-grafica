@@ -18,7 +18,15 @@ class Sol implements Runnable {
          if(mat_sol[0] > 659){
            fase_lua++;
            fase_lua %= 6;
-           mat_lua[0] = -60;
+           
+           mat_lua[0][0] = -60;
+           mat_lua[1][0] = -75;
+           mat_lua[2][0] = -75;
+           mat_lua[3][0] = -100;
+           mat_lua[4][0] = -100;
+           mat_lua[5][0] = -125;
+           mat_lua[6][0] = -125;
+           mat_lua[7][0] = -140;
          }
       }
       redraw();

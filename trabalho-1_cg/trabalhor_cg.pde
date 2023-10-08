@@ -15,7 +15,7 @@ int d = 0;
 // ceu
 int r=75, g=135, b=175, time_luz = 0, fase_lua = -1;
 float[] mat_sol = new float[2];
-float[] mat_lua = new float[2];
+float[][] mat_lua = new float[8][2];
 float[] mat_vagalume = new float[8];
 float raioExterno_meteoro = 20; 
 
@@ -95,8 +95,8 @@ void draw() {
   if(mat_sol[0] <= 660){
     sol();
   }
-  if(mat_lua[0] <= 660){
-    if(mat_lua[0] < 700){
+  if(mat_lua[0][0] <= 660){
+    if(mat_lua[0][0] < 700){
       vagalume();
     }
     lua(fase_lua);
