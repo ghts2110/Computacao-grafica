@@ -9,7 +9,7 @@ void fib(){
 }
 
 //pessoa 
-int[][] mat_pessoa = new int[23][2];
+float[][] mat_pessoa = new float[39][2];
 int d = 0;
 
 // ceu
@@ -87,8 +87,6 @@ void draw() {
   //pessoa
   if(mat_sol[0][0] < 600 && mat_sol[0][0] > 0){
     corpo(d);
-    cabeca();
-    chapeu(d);
   }
   
   //ceu

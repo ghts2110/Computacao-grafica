@@ -1,119 +1,172 @@
 void corpo(int d){
-  //corpo
+  //cabeca
   line(mat_pessoa[0][0], mat_pessoa[0][1], mat_pessoa[1][0], mat_pessoa[1][1]);
+  line(mat_pessoa[0][0], mat_pessoa[0][1], mat_pessoa[2][0], mat_pessoa[2][1]);
+  
+  line(mat_pessoa[1][0], mat_pessoa[1][1], mat_pessoa[3][0], mat_pessoa[3][1]);
 
-  //perna
   line(mat_pessoa[2][0], mat_pessoa[2][1], mat_pessoa[3][0], mat_pessoa[3][1]);
+  
+  //corpo
   line(mat_pessoa[4][0], mat_pessoa[4][1], mat_pessoa[5][0], mat_pessoa[5][1]);
+  line(mat_pessoa[4][0], mat_pessoa[4][1], mat_pessoa[6][0], mat_pessoa[6][1]);
+  
+  line(mat_pessoa[5][0], mat_pessoa[5][1], mat_pessoa[7][0], mat_pessoa[7][1]);
 
+  line(mat_pessoa[6][0], mat_pessoa[6][1], mat_pessoa[7][0], mat_pessoa[7][1]);
+  
+  //perna
+  line(mat_pessoa[8][0], mat_pessoa[8][1], mat_pessoa[9][0], mat_pessoa[9][1]);
+  line(mat_pessoa[8][0], mat_pessoa[8][1], mat_pessoa[10][0], mat_pessoa[10][1]);
+  
+  line(mat_pessoa[9][0], mat_pessoa[9][1], mat_pessoa[11][0], mat_pessoa[11][1]);
+
+  line(mat_pessoa[10][0], mat_pessoa[10][1], mat_pessoa[11][0], mat_pessoa[11][1]);
+  
+  line(mat_pessoa[12][0], mat_pessoa[12][1], mat_pessoa[13][0], mat_pessoa[13][1]);
+  
   //braco
-  if(d == 0){
-    line(mat_pessoa[6][0], mat_pessoa[6][1], mat_pessoa[7][0], mat_pessoa[7][1]);
-    if(mat_pessoa[0][0] == 85){
-      line(mat_pessoa[6][0], mat_pessoa[6][1], mat_pessoa[8][0], mat_pessoa[8][1]);
-    }else{
-      line(mat_pessoa[6][0], mat_pessoa[6][1], mat_pessoa[9][0], mat_pessoa[9][1]);
-    }
+  if(mat_pessoa[0][0] == 85){
+    line(mat_pessoa[35][0], mat_pessoa[35][1], mat_pessoa[36][0], mat_pessoa[36][1]);
+    line(mat_pessoa[35][0], mat_pessoa[35][1], mat_pessoa[37][0], mat_pessoa[37][1]);
+    
+    line(mat_pessoa[36][0], mat_pessoa[36][1], mat_pessoa[38][0], mat_pessoa[38][1]);
+  
+    line(mat_pessoa[37][0], mat_pessoa[37][1], mat_pessoa[38][0], mat_pessoa[38][1]); 
   }else{
-    line(mat_pessoa[6][0], mat_pessoa[6][1], mat_pessoa[10][0], mat_pessoa[10][1]);
-    line(mat_pessoa[6][0], mat_pessoa[6][1], mat_pessoa[11][0], mat_pessoa[11][1]);
-
+    line(mat_pessoa[14][0], mat_pessoa[14][1], mat_pessoa[15][0], mat_pessoa[15][1]);
+    line(mat_pessoa[14][0], mat_pessoa[14][1], mat_pessoa[16][0], mat_pessoa[16][1]);
+    
+    line(mat_pessoa[15][0], mat_pessoa[15][1], mat_pessoa[17][0], mat_pessoa[17][1]);
+  
+    line(mat_pessoa[16][0], mat_pessoa[16][1], mat_pessoa[17][0], mat_pessoa[17][1]);  
   }
   
+  line(mat_pessoa[18][0], mat_pessoa[18][1], mat_pessoa[19][0], mat_pessoa[19][1]);
+  line(mat_pessoa[18][0], mat_pessoa[18][1], mat_pessoa[20][0], mat_pessoa[20][1]);
+  
+  line(mat_pessoa[19][0], mat_pessoa[19][1], mat_pessoa[21][0], mat_pessoa[21][1]);
+
+  line(mat_pessoa[20][0], mat_pessoa[20][1], mat_pessoa[21][0], mat_pessoa[21][1]);  
+  
+  //olho
+  line(mat_pessoa[22][0], mat_pessoa[22][1], mat_pessoa[23][0], mat_pessoa[23][1]);
+  line(mat_pessoa[22][0], mat_pessoa[22][1], mat_pessoa[24][0], mat_pessoa[24][1]);
+  
+  line(mat_pessoa[23][0], mat_pessoa[23][1], mat_pessoa[25][0], mat_pessoa[25][1]);
+
+  line(mat_pessoa[24][0], mat_pessoa[24][1], mat_pessoa[25][0], mat_pessoa[25][1]);
+
+  line(mat_pessoa[26][0], mat_pessoa[26][1], mat_pessoa[27][0], mat_pessoa[27][1]);
+  line(mat_pessoa[26][0], mat_pessoa[26][1], mat_pessoa[28][0], mat_pessoa[28][1]);
+  
+  line(mat_pessoa[27][0], mat_pessoa[27][1], mat_pessoa[29][0], mat_pessoa[29][1]);
+
+  line(mat_pessoa[28][0], mat_pessoa[28][1], mat_pessoa[29][0], mat_pessoa[29][1]);
+
+  //boca
+  if(d == 0){
+    line(mat_pessoa[30][0], mat_pessoa[30][1], mat_pessoa[31][0], mat_pessoa[31][1]);
+    line(mat_pessoa[30][0], mat_pessoa[30][1], mat_pessoa[32][0], mat_pessoa[32][1]);
+  }else{
+    line(mat_pessoa[30][0], mat_pessoa[30][1], mat_pessoa[33][0], mat_pessoa[33][1]);
+    line(mat_pessoa[30][0], mat_pessoa[30][1], mat_pessoa[34][0], mat_pessoa[34][1]);
+  }
 }  
 
-void cabeca(){
-  int centerX = mat_pessoa[12][0]; // Coordenada x do centro do círculo
-  int centerY = mat_pessoa[12][1]; // Coordenada y do centro do círculo
-  int radius = 13; // Raio do círculo
-
-  float angleStep = TWO_PI / 60; // Divide o círculo em 60 segmentos
-  
-  for (float angle = 0; angle < TWO_PI; angle += angleStep) {
-    float x1 = centerX + cos(angle) * radius;
-    float y1 = centerY + sin(angle) * radius;
-    float x2 = centerX + cos(angle + angleStep) * radius;
-    float y2 = centerY + sin(angle + angleStep) * radius;
-    line(x1, y1, x2, y2);
-  }
-   
-  //olhos 
-  point(mat_pessoa[13][0], mat_pessoa[13][1]);
-  point(mat_pessoa[14][0], mat_pessoa[14][1]); 
-}
-
-void chapeu(int d){
-  stroke(139, 69, 19);
-  
-  if(d == 0){
-    line(mat_pessoa[15][0], mat_pessoa[15][1], mat_pessoa[16][0], mat_pessoa[16][1]);
-    for(float i = -2; i != 5.5; i+=0.25){
-      line(mat_pessoa[17][0]+i, mat_pessoa[17][1]-i, mat_pessoa[18][0]+i, mat_pessoa[18][1]-i);
-    }
-  }else{
-    line(mat_pessoa[19][0], mat_pessoa[19][1], mat_pessoa[20][0], mat_pessoa[20][1]);
-    for(float i = -2; i != 5.5; i+=0.25){
-      line(mat_pessoa[21][0]-i, mat_pessoa[21][1]-i, mat_pessoa[22][0]-i, mat_pessoa[22][1]-i);
-    }
-  }
-}
-
 void pss(){
+  //cabeca
+  mat_pessoa[0][0] = 240;
+  mat_pessoa[0][1] = 455;
+  mat_pessoa[1][0] = 270;
+  mat_pessoa[1][1] = 455;
+  mat_pessoa[2][0] = 240;
+  mat_pessoa[2][1] = 480;
+  mat_pessoa[3][0] = 270;
+  mat_pessoa[3][1] = 480;
+  
+  //olho
+  mat_pessoa[22][0] = 245;
+  mat_pessoa[22][1] = 465;
+  mat_pessoa[23][0] = 250;
+  mat_pessoa[23][1] = 465;
+  mat_pessoa[24][0] = 245;
+  mat_pessoa[24][1] = 470;
+  mat_pessoa[25][0] = 250;
+  mat_pessoa[25][1] = 470;
+  
+  mat_pessoa[26][0] = 260;
+  mat_pessoa[26][1] = 465;
+  mat_pessoa[27][0] = 265;
+  mat_pessoa[27][1] = 465;
+  mat_pessoa[28][0] = 260;
+  mat_pessoa[28][1] = 470;
+  mat_pessoa[29][0] = 265;
+  mat_pessoa[29][1] = 470;
+  
+  //boca
+  mat_pessoa[30][0] = 255;
+  mat_pessoa[30][1] = 475;
+  
+  mat_pessoa[31][0] = 250;
+  mat_pessoa[31][1] = 480;
+  mat_pessoa[32][0] = 260;
+  mat_pessoa[32][1] = 480;
+  
+  mat_pessoa[33][0] = 250;
+  mat_pessoa[33][1] = 473;
+  mat_pessoa[34][0] = 260;
+  mat_pessoa[34][1] = 473;
+  
   //corpo
-  mat_pessoa[0][0] = 250;
-  mat_pessoa[0][1] = 460;
-  mat_pessoa[1][0] = 250;
-  mat_pessoa[1][1] = 520;
+  mat_pessoa[4][0] = 245;
+  mat_pessoa[4][1] = 480;
+  mat_pessoa[5][0] = 265;
+  mat_pessoa[5][1] = 480;
+  mat_pessoa[6][0] = 245;
+  mat_pessoa[6][1] = 520;
+  mat_pessoa[7][0] = 265;
+  mat_pessoa[7][1] = 520;
   
   //perna
-  mat_pessoa[2][0] = 250;
-  mat_pessoa[2][1] = 520;
-  mat_pessoa[3][0] = 265;
-  mat_pessoa[3][1] = 540;
-  mat_pessoa[4][0] = 250;
-  mat_pessoa[4][1] = 520;
-  mat_pessoa[5][0] = 235;
-  mat_pessoa[5][1] = 540;
+  mat_pessoa[8][0] = 250;
+  mat_pessoa[8][1] = 520;
+  mat_pessoa[9][0] = 260;
+  mat_pessoa[9][1] = 520;
+  mat_pessoa[10][0] = 250;
+  mat_pessoa[10][1] = 540;
+  mat_pessoa[11][0] = 260;
+  mat_pessoa[11][1] = 540;
+  mat_pessoa[12][0] = 255;
+  mat_pessoa[12][1] = 520;
+  mat_pessoa[13][0] = 255;
+  mat_pessoa[13][1] = 540;
   
   //braco
-  mat_pessoa[6][0] = 250;
-  mat_pessoa[6][1] = 475;
-  mat_pessoa[7][0] = 265;
-  mat_pessoa[7][1] = 495;
-  mat_pessoa[8][0] = 235;
-  mat_pessoa[8][1] = 475;
-  mat_pessoa[9][0] = 235;
-  mat_pessoa[9][1] = 455;
-  mat_pessoa[10][0] = 265;
-  mat_pessoa[10][1] = 455;
-  mat_pessoa[11][0] = 235;
-  mat_pessoa[11][1] = 495;
+  mat_pessoa[14][0] = 240;
+  mat_pessoa[14][1] = 485;
+  mat_pessoa[15][0] = 245;
+  mat_pessoa[15][1] = 485;
+  mat_pessoa[16][0] = 240;
+  mat_pessoa[16][1] = 515;
+  mat_pessoa[17][0] = 245;
+  mat_pessoa[17][1] = 515;
   
-  //cabeca
-  mat_pessoa[12][0] = 251;
-  mat_pessoa[12][1] = 448;
+  mat_pessoa[35][0] = 223;
+  mat_pessoa[35][1] = 485;
+  mat_pessoa[36][0] = 245;
+  mat_pessoa[36][1] = 485;
+  mat_pessoa[37][0] = 223;
+  mat_pessoa[37][1] = 495;
+  mat_pessoa[38][0] = 245;
+  mat_pessoa[38][1] = 495;
   
-  //olhos
-  mat_pessoa[13][0] = 246;
-  mat_pessoa[13][1] = 447;
-  mat_pessoa[14][0] = 254;
-  mat_pessoa[14][1] = 447;
-  
-  //chapeu
-  mat_pessoa[15][0] = 235;
-  mat_pessoa[15][1] = 430;
-  mat_pessoa[16][0] = 275;
-  mat_pessoa[16][1] = 450;
-  mat_pessoa[17][0] = 243;
-  mat_pessoa[17][1] = 430;
-  mat_pessoa[18][0] = 268;
-  mat_pessoa[18][1] = 442;
-  mat_pessoa[19][0] = 233;
-  mat_pessoa[19][1] = 452;
-  mat_pessoa[20][0] = 270;
-  mat_pessoa[20][1] = 432;
-  mat_pessoa[21][0] = 237;
-  mat_pessoa[21][1] = 447;
-  mat_pessoa[22][0] = 260;
-  mat_pessoa[22][1] = 435;
+  mat_pessoa[18][0] = 265;
+  mat_pessoa[18][1] = 485;
+  mat_pessoa[19][0] = 270;
+  mat_pessoa[19][1] = 485;
+  mat_pessoa[20][0] = 265;
+  mat_pessoa[20][1] = 515;
+  mat_pessoa[21][0] = 270;
+  mat_pessoa[21][1] = 515;
 }
