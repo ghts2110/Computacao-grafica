@@ -13,17 +13,10 @@ void areia(){
 
 void mar(int nivel, int t){
   stroke(0, 0, 128);
-  int dimi = 100;
-  
-
-  for(int i= 500;i != 600; i++){
-    int x1 = nivel, x2 = 600;
-    if(dimi != 0){
-        dimi--;
-    }
-    
-    line(x1-dimi-t, i, x2, i);
+  for(int i = 0; i != 100; i++){
+    line(mat_mar[i][0], mat_mar[i][1], mat_mar[100+i][0], mat_mar[100+i][1]);
   }
+  
 }
 
 void arvore(){
@@ -43,5 +36,15 @@ void arvore(){
   
   for(int i = 20; i <= 90; i++){
     line(55, 240, i, 345);
+  }
+}
+
+void start_mar(){
+  for(int i = 0; i != 100; i++){
+    mat_mar[i][0] = 500+i;
+    mat_mar[i][1] = 500+i;
+    
+    mat_mar[i+100][0] = 600;
+    mat_mar[i+100][1] = 500+i;
   }
 }

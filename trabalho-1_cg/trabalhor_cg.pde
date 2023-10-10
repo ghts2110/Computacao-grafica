@@ -45,6 +45,9 @@ Thread tj = new Thread(new Janela());
 Thread tmp = new Thread(new Movimento_pessoa());
 Thread tv = new Thread(new Vagalumi());
 
+//mar
+float[][] mat_mar = new float[200][2];
+
 void setup(){
   size(600, 600);
   centerX = width / 2;
@@ -53,6 +56,7 @@ void setup(){
   pss();
   ls();
   vm();
+  start_mar();
   
   noLoop();
   noSmooth();

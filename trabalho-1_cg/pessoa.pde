@@ -26,7 +26,7 @@ void corpo(int d){
   line(mat_pessoa[12][0], mat_pessoa[12][1], mat_pessoa[13][0], mat_pessoa[13][1]);
   
   //braco
-  if(mat_pessoa[0][0] == 85){
+  if(mat_pessoa[0][0] <= 85){
     line(mat_pessoa[35][0], mat_pessoa[35][1], mat_pessoa[36][0], mat_pessoa[36][1]);
     line(mat_pessoa[35][0], mat_pessoa[35][1], mat_pessoa[37][0], mat_pessoa[37][1]);
     
