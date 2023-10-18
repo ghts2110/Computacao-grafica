@@ -24,6 +24,16 @@ public class Operacoes{
     return multiplicacao(matrizEscala, xy);
   }
   
+  public float[][] reflexaoX(float[][] xy){
+  float[][] matrizReflexao={{-1, 0, 0}, {0, 1, 0}, {0, 0, 1} };
+  return multiplicacao(matrizReflexao,xy);
+  }
+  
+  public float[][] reflexaoY(float[][] xy){
+  float[][] matrizReflexao={{1, 0, 0}, {0, -1, 0}, {0, 0, 1} };
+  return multiplicacao(matrizReflexao,xy);
+  }
+  
   private float[][] multiplicacao(float[][] m, float[][]n){
     float[][] resultado = new float[m.length][n[0].length];
     

@@ -1,6 +1,9 @@
 class Vagalumi implements Runnable {
   public void run() {
     while (true) {
+      
+              Operacoes operacoes;
+        operacoes = new Operacoes();
       mat_vagalume[0] = 100 * cos(angulo_vagalume) - 100 * sin(angulo_vagalume);
       mat_vagalume[0] += 290;
       mat_vagalume[1] = 100 * cos(angulo_vagalume) + 100 * sin(angulo_vagalume);
@@ -24,6 +27,7 @@ class Vagalumi implements Runnable {
       mat_vagalume[7] += 280;
 
       angulo_vagalume += 0.005;
+      
       redraw();
 
       try {

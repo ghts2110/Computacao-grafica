@@ -208,6 +208,7 @@ void lua(int fase_lua){
 }
 
 void passaro(double dp[]){
+
     
     if(radius < 0){
       validate_volta = false;
@@ -224,7 +225,6 @@ void passaro(double dp[]){
       time_passaro++;
       radius += (dp[time_passaro]/dp[time_passaro-1])-1;
     }
-    
     float x = centerX + cos(angle) * radius;
     float y = centerY + sin(angle) * radius;
     
@@ -260,11 +260,26 @@ void passaro(double dp[]){
     line(x-70+15, y-10-80, x-70+5, y-10-80);
     
     angle += speed;  // Incrementa o ângulo para fazer o ponto se mover em círculos
+    
 }
 
-void nuvem(float x_nuvem, float y_nuvem){
-  
-}
+void nuvem(){ //float aX,float aY,float bX,float bY,float cX,float cY,float dX,float dY
+    
+    quadrado[0][0] = 100;
+    quadrado[0][1] = 100;
+    quadrado[1][0] = 200;
+    quadrado[1][1] = 100;
+    quadrado[2][0] = 300;
+    quadrado[2][1] = 100;
+    quadrado[3][0] = 200;
+    quadrado[3][1] = 300;
+    
+    stroke(255);
+    for (int i = 0; i < 4; i++) {
+      int next = (i + 1) % 4;
+      line(quadrado[i][0], quadrado[i][1], quadrado[next][0], quadrado[next][1]);
+    }
+  }
   
 void vagalume(){
   int numRaios = 10; // Número de raios do sol

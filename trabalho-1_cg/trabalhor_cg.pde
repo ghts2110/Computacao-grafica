@@ -7,6 +7,17 @@ void fib(){
     dp[i] = dp[i-1] + dp[i-2];
   } 
 }
+//nuvem
+float[][]quadrado = new float[4][2];
+float aX = 1; 
+float aY = 150;
+float bX = 1; 
+float bY = 100; 
+float cX = 101; 
+float cY = 100; 
+float dX = 101; 
+float dY = 150; 
+
 
 //pessoa 
 float[][] mat_pessoa = new float[39][2];
@@ -44,6 +55,7 @@ Thread tfc = new Thread(new Fumaca_chamine());
 Thread tj = new Thread(new Janela());
 Thread tmp = new Thread(new Movimento_pessoa());
 Thread tv = new Thread(new Vagalumi());
+Thread tn = new Thread(new Nuvem());
 
 //mar
 float[][] mat_mar = new float[200][2];
@@ -57,6 +69,7 @@ void setup(){
   ls();
   vm();
   start_mar();
+  nuvem();
   
   noLoop();
   noSmooth();
@@ -68,11 +81,13 @@ void setup(){
   tj.start();
   tmp.start();
   tv.start();
+  tn.start();
 
 }
 
 void draw() {
   background(r, g, b);
+  
 
   //chao
   grama();
@@ -105,4 +120,5 @@ void draw() {
   }
   
   passaro(dp);
+  
 }
