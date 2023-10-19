@@ -268,6 +268,12 @@ void nuvem(){ //float aX,float aY,float bX,float bY,float cX,float cY,float dX,f
     for (int i = 0; i < 4; i++) {
       int next = (i + 1) % 4;
       line(quadrado[i][0], quadrado[i][1], quadrado[next][0], quadrado[next][1]);
+      
+      print(quadrado[i][0] + "\t" 
+          + quadrado[i][1] + "\t" 
+          + quadrado[next][0] + "\t"
+          + quadrado[next][1] + "\t"
+          + " " + i + " " + next + "\n");
     }
   }
   
