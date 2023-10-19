@@ -82,7 +82,7 @@ void setup(){
 void draw() {
   background(r, g, b);
   //Celin Do Gera
-  quadradinhoDeOito.desenharQuadrado();
+  quadradinhoDeOito.desenharPentagrama();
 
   //chao
   grama();

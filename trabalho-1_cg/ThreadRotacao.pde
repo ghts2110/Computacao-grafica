@@ -1,56 +1,45 @@
-// made in celin do gera
-
 class ThreadRotacao extends Thread {
-  float[][] quadrado; 
+  float[][] pentagrama; 
 
-  float centerX = 10;
+  float centerX = 20;
   float centerY = 200;
-  float side = 100;
-  float angle = 0; 
+  float radius = 100;
+  float angle = 0;
   Operacoes operacoes;
 
   ThreadRotacao() {
-    quadrado = new float[4][2]; 
+    pentagrama = new float[5][2]; 
 
     operacoes = new Operacoes();
     
-    quadrado[0][0] = centerX - side / 2;
-    quadrado[0][1] = centerY - side / 2;
-    quadrado[1][0] = centerX + side / 2;
-    quadrado[1][1] = centerY - side / 2;
-    quadrado[2][0] = centerX + side / 2;
-    quadrado[2][1] = centerY + side / 2;
-    quadrado[3][0] = centerX - side / 2;
-    quadrado[3][1] = centerY + side / 2;
-    
-    
-  
+    for (int i = 0; i < 5; i++) {
+      float x = centerX + radius * cos(TWO_PI / 5 * i);
+      float y = centerY + radius * sin(TWO_PI / 5 * i);
+      pentagrama[i][0] = x;
+      pentagrama[i][1] = y;
+    }
   }
 
-  void desenharQuadrado() {
-    
+  void desenharPentagrama() {
     stroke(255, 10, 10);
-    for (int i = 0; i < 4; i++) {
-      line(quadrado[i][0], quadrado[i][1], quadrado[(i + 1) % 4][0], quadrado[(i + 1) % 4][1]);
+    for (int i = 0; i < 5; i++) {
+      line(pentagrama[i][0], pentagrama[i][1], pentagrama[(i + 2) % 5][0], pentagrama[(i + 2) % 5][1]);
     }
-    
-   
   }
 
   public void run() {
     while (true) {
-
-      for (int i = 0; i < 4; i++) {
-        float[][] resultado = operacoes.rotacao(quadrado[i][0] - centerX, quadrado[i][1] - centerY, radians(1)); 
-        quadrado[i][0] = resultado[0][0] + centerX;
-        quadrado[i][1] = resultado[1][0] + centerY;
+      for (int i = 0; i < 5; i++) {
+        float[][] resultado = operacoes.rotacao(pentagrama[i][0] - centerX, pentagrama[i][1] - centerY, radians(1)); 
+        pentagrama[i][0] = resultado[0][0] + centerX;
+        pentagrama[i][1] = resultado[1][0] + centerY;
       }
       redraw();
       try {
-        Thread.sleep(15); 
+        Thread.sleep(15);
       } catch (InterruptedException e) {
         e.printStackTrace();
-      } 
+      }
     }
   }
 }
