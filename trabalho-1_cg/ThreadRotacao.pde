@@ -1,14 +1,19 @@
+// made in celin do gera
+
 class ThreadRotacao extends Thread {
-  float[][] quadrado; // Matriz para armazenar os pontos do quadrado
-  float centerX = 300;
-  float centerY = 300;
-  float side = 10;
-  float angle = 0; // Ângulo de rotação inicial
+  float[][] quadrado; 
+
+  float centerX = 10;
+  float centerY = 200;
+  float side = 100;
+  float angle = 0; 
   Operacoes operacoes;
 
   ThreadRotacao() {
     quadrado = new float[4][2]; 
+
     operacoes = new Operacoes();
+    
     quadrado[0][0] = centerX - side / 2;
     quadrado[0][1] = centerY - side / 2;
     quadrado[1][0] = centerX + side / 2;
@@ -17,14 +22,19 @@ class ThreadRotacao extends Thread {
     quadrado[2][1] = centerY + side / 2;
     quadrado[3][0] = centerX - side / 2;
     quadrado[3][1] = centerY + side / 2;
+    
+    
+  
   }
 
   void desenharQuadrado() {
-    stroke(0);
+    
+    stroke(255, 10, 10);
     for (int i = 0; i < 4; i++) {
-      int next = (i + 1) % 4;
-      line(quadrado[i][0], quadrado[i][1], quadrado[next][0], quadrado[next][1]);
+      line(quadrado[i][0], quadrado[i][1], quadrado[(i + 1) % 4][0], quadrado[(i + 1) % 4][1]);
     }
+    
+   
   }
 
   public void run() {
@@ -32,10 +42,15 @@ class ThreadRotacao extends Thread {
 
       for (int i = 0; i < 4; i++) {
         float[][] resultado = operacoes.rotacao(quadrado[i][0] - centerX, quadrado[i][1] - centerY, radians(1)); 
-        quadrado[i] = new float[]{resultado[0][0] + centerX, resultado[1][0] + centerY};
+        quadrado[i][0] = resultado[0][0] + centerX;
+        quadrado[i][1] = resultado[1][0] + centerY;
       }
-      redraw(); 
-      delay(16); 
+      redraw();
+      try {
+        Thread.sleep(15); 
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      } 
     }
   }
 }

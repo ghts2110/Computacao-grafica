@@ -48,6 +48,7 @@ Thread tj = new Thread(new Janela());
 Thread tmp = new Thread(new Movimento_pessoa());
 Thread tv = new Thread(new Vagalumi());
 Thread tn = new Thread(new Nuvem());
+ThreadRotacao quadradinhoDeOito = new ThreadRotacao();
 
 //mar
 float[][] mat_mar = new float[200][2];
@@ -74,12 +75,14 @@ void setup(){
   tmp.start();
   tv.start();
   tn.start();
+  quadradinhoDeOito.start();
 
 }
 
 void draw() {
   background(r, g, b);
-  
+  //Celin Do Gera
+  quadradinhoDeOito.desenharQuadrado();
 
   //chao
   grama();
@@ -94,6 +97,7 @@ void draw() {
   porta();  
   janela(open);
   macaneta();
+  
   
   //pessoa
   if(mat_sol[0][0] < 600 && mat_sol[0][0] > 0){
