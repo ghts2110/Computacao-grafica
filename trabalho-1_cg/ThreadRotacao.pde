@@ -5,6 +5,8 @@ class ThreadRotacao extends Thread {
   float centerY = 200;
   float radius = 100;
   float angle = 0;
+  float originX = 0;
+  float originY = 0;
   Operacoes operacoes;
 
   ThreadRotacao() {
@@ -17,6 +19,7 @@ class ThreadRotacao extends Thread {
       float y = centerY + radius * sin(TWO_PI / 5 * i);
       pentagrama[i][0] = x;
       pentagrama[i][1] = y;
+      
     }
   }
 
@@ -30,10 +33,21 @@ class ThreadRotacao extends Thread {
   public void run() {
     while (true) {
       for (int i = 0; i < 5; i++) {
-        float[][] resultado = operacoes.rotacao(pentagrama[i][0] - centerX, pentagrama[i][1] - centerY, radians(1)); 
-        pentagrama[i][0] = resultado[0][0] + centerX;
-        pentagrama[i][1] = resultado[1][0] + centerY;
+        pentagrama[i][0] -= centerX;
+        pentagrama[i][1] -= centerY;
       }
+      
+      for (int i = 0; i < 5; i++) {
+        float[][] resultado = operacoes.rotacao(pentagrama[i][0], pentagrama[i][1], radians(1)); 
+        pentagrama[i][0] = resultado[0][0];
+        pentagrama[i][1] = resultado[1][0];
+      }
+
+      for (int i = 0; i < 5; i++) {
+        pentagrama[i][0] += centerX;
+        pentagrama[i][1] += centerY;
+      }
+      
       redraw();
       try {
         Thread.sleep(15);
