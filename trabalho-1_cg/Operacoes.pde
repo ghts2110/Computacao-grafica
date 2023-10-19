@@ -25,7 +25,7 @@ public class Operacoes{
   }
   
   public float[][] reflexaoX(float[][] xy){
-  float[][] matrizReflexao={{-1, 0, 0}, {0, 1, 0}, {0, 0, 1} };
+  float[][] matrizReflexao={{-1, 0,0,0}, {0,-1,0,0},{0,0,-1,0},{0,0,0,-1}};
   return multiplicacao(matrizReflexao,xy);
   }
   
