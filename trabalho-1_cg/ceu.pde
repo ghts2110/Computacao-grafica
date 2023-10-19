@@ -263,17 +263,7 @@ void passaro(double dp[]){
     
 }
 
-void nuvem(){ //float aX,float aY,float bX,float bY,float cX,float cY,float dX,float dY
-    
-    quadrado[0][0] = 100;
-    quadrado[0][1] = 100;
-    quadrado[1][0] = 200;
-    quadrado[1][1] = 100;
-    quadrado[2][0] = 300;
-    quadrado[2][1] = 100;
-    quadrado[3][0] = 200;
-    quadrado[3][1] = 300;
-    
+void nuvem(){ //float aX,float aY,float bX,float bY,float cX,float cY,float dX,float dY  
     stroke(255);
     for (int i = 0; i < 4; i++) {
       int next = (i + 1) % 4;
@@ -369,6 +359,17 @@ void ls(){
   mat_lua[6][1] = 115;
   mat_lua[7][0] = 630;
   mat_lua[7][1] = 100;
+  
+  
+  quadrado[0][0] = 1;
+  quadrado[0][1] = 150;
+  quadrado[1][0] = 1;
+  quadrado[1][1] = 100;
+  quadrado[2][0] = 101;
+  quadrado[2][1] = 100;
+  quadrado[3][0] = 101;
+  quadrado[3][1] = 150;
+   
 }
 
 void vm(){

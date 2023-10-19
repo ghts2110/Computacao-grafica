@@ -9,14 +9,6 @@ void fib(){
 }
 //nuvem
 float[][]quadrado = new float[4][2];
-float aX = 1; 
-float aY = 150;
-float bX = 1; 
-float bY = 100; 
-float cX = 101; 
-float cY = 100; 
-float dX = 101; 
-float dY = 150; 
 
 
 //pessoa 
@@ -120,5 +112,5 @@ void draw() {
   }
   
   passaro(dp);
-  
+  nuvem();
 }
